@@ -1,4 +1,5 @@
 import styles from '../Posts.module.css';
+import EditPost from './EditPost';
 
 async function getPost(postId: string) {
   const res = await fetch(
@@ -22,6 +23,7 @@ export default async function PostPage({ params }: any) {
         <h5>{post.content}</h5>
         <p>{post.created}</p>
       </div>
+      <EditPost post={post}/>
     </div>
   );
 }
